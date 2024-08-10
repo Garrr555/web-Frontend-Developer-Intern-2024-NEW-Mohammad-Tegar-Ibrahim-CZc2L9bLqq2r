@@ -5,6 +5,7 @@ import { useContext } from "react";
 
 export default function Card() {
   const { data } = useContext(Contex);
+  console.log(data)
   return (
     <>
       {data &&
@@ -18,7 +19,7 @@ export default function Card() {
                   alt={"foto"}
                   src={
                     str.medium_image[0] == undefined
-                      ? "a"
+                      ? "https://via.placeholder.com/1000x1000"
                       : str.medium_image[0].url
                   }
                   className="h-full w-full object-cover"
@@ -30,7 +31,7 @@ export default function Card() {
                     {`${str.created_at.split(" ")[0]}`}
                   </p>
                 </div>
-                <p className=" block font-sans text-sm font-normal leading-normal text-gray-700 antialiased opacity-75 ellipsis-container">
+                <p className=" block font-sans text-lg font-bold leading-normal text-black antialiased opacity-75 ellipsis-container">
                   {str.title}
                 </p>
               </div>
